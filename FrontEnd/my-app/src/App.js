@@ -1,46 +1,18 @@
-import React from 'react';
-import axios from 'axios';
-
-import './App.css';
-
-class App extends React.Component {
-
-	state = { advice: '' };
-
-	componentDidMount() {
-		this.fetchAdvice();
-	}
-
-	fetchAdvice = () => {
-		axios.get('https://api.adviceslip.com/advice')
-		.then((response) => {
-			const { advice } = response.data.slip;
-
-			this.setState({ advice });
-		})
-
-		.catch ((error) => {
-			console.log(error);
-		})
-	}
-
-	render() {
-		const { advice } = this.state;
-
-		return (
-			<div className="app">
-				<div className="card">
-					<h1 className="heading">
-					{this.state.advice}
-					</h1>
-					<button className="button" onClick=
-					{this.fetchAdvice}>
-						<span>Give Me Advice</span>
-					</button>
-				</div>
+import React from 'react' ;
+import Quot from './Pages/RandomQuot/Quot'
+// import Images from './Pages/RandomImages/Images'
+const App = () => {
+	return (
+		<div className='app'>
+			<h1>Younes</h1>
+			<div className='randomQuot'>
+				<Quot />
 			</div>
-		);
-	}
+			<div>
+				{/* <Images /> */}
+			</div>
+		</div>
+	)
 }
 
-export default App;
+export default App ;
