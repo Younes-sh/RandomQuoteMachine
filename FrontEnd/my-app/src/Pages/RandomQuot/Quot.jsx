@@ -1,13 +1,12 @@
-import React from 'react';
+import React,{useEffect , useState} from 'react';
 import axios from 'axios';
 
-// const req = axios.create({
-//     baseURL : 'https://api.adviceslip.com/advice'
-// })
 
 
 class Quot extends React.Component {
-    // const [posts , setPosts] = useState ([])
+   
+
+
 	state = { advice: '' };
 
 	componentDidMount() {
@@ -37,12 +36,12 @@ class Quot extends React.Component {
 		return (
 			<div className="Quot">
 				<div className="card">
-					<h1 className="heading">
-					{this.state.advice}
+					<div className='contentText'>
+						<h1 className="heading">
+						{this.state.advice}
+						</h1>
+					</div>
 
-                    
-
-					</h1>
 					<button className="button" onClick=
 					{this.fetchAdvice}>
 						<span>Give Me Advice</span>
