@@ -1,8 +1,8 @@
 import React from 'react' ;
 import './App.css'
 import Quot from './Pages/RandomQuot/Quot'
-import Images from './Pages/RandomImages/Images'
-// import RA from './Pages/random2/random2'
+// import Images from './Pages/RandomImages/Images'
+import Image from './component/Imagespool'
 const App = () => {
 	return (
 		<div className='app'>
@@ -11,7 +11,8 @@ const App = () => {
 			</div>
 			{/* <RA /> */}
 			<div className='images'>
-				<Images />
+				{/* <Images /> */}
+				<Image />
 			</div>
 		</div>
 	)

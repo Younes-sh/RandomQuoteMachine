@@ -1,18 +1,13 @@
-const http = require('http')
-const nodeRes = require('node-res')
- 
-http.createServer(function (req, res) {
-  
-  // plain text
-  nodeRes.send(req, res, "Hello world")
- 
-  // json
-  nodeRes.json(req, res, {time:"now"})
- 
-  // jsonp
-  nodeRes.jsonp(req, res, {time:"now"}, "callback")
- 
+const express = require('express')
+const app = express()
+
+// respond with "hello world" when a GET request is made to the homepage
+app.get('/', (req, res) => {
+  res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000")
+  res.send('https://images.unsplash.com/photo-1579762715118-a6f1d4b934f1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=684&q=80')
 }).listen(5000)
+
+
 
 
 
